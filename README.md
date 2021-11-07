@@ -1,5 +1,5 @@
-# ESP-IR
-Univeral remote control for TV/DVD/Light based on ESP8266
+# ESP-IR_ServiceMenu
+Service remote control for TV/DVD/Light based on ESP8266
 
 ESP_IR universal  remote control  described here uses a ESP-12 and an optional RF433 sender to control TV/DVD/lightning.
 Features:
