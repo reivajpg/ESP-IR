@@ -45,8 +45,8 @@ extern "C"
 // Version number
 #define VERSION "20-jul-2017"
 // Output pins
-#define IR_PIN 4
-#define RF_PIN 0
+#define IR_PIN 15 //4
+//#define RF_PIN 0
 
 //******************************************************************************************
 // Forward declaration of methods                                                          *
@@ -164,6 +164,7 @@ void snditv ( const char* str )
 //         example: "111110fffff0" for "A on".                                             *
 // rept is the number of times to repeat, for exaple 8.                                    *
 //******************************************************************************************
+/* 
 void send433code ( int pw, const char *cmd, int rept )
 {
   int pw3 = 3 * pw ;    // Timing for long pulse/pause
@@ -214,6 +215,8 @@ void send433code ( int pw, const char *cmd, int rept )
     delayMicroseconds ( pw * 31 ) ;
   }
 }
+
+ */
 
 
 //******************************************************************************************
@@ -401,10 +404,12 @@ void handleIRCmd()
     li = hextolong ( argument[1].c_str() ) ;           // Convert code to long int
     irsend.sendNEC ( li, 32 ) ;                        // Send 32 bits NEC format
   }
+  /*
   else if ( argument[0] == "rf433" )                   // RF433 request?
   {
     send433code ( argument[1].toInt(), argument[2].c_str(), argument[3].toInt() ) ;
   }
+  */
 }
 
 
@@ -502,8 +507,8 @@ void setup()
   irsend.begin() ;                                   // Set output pin for IR
   Serial.begin ( 115200 ) ;                          // For debugging
   Serial.println() ;
-  pinMode ( RF_PIN, OUTPUT ) ;                       // Init I/O pin
-  digitalWrite ( RF_PIN, LOW ) ;
+  //pinMode ( RF_PIN, OUTPUT ) ;                       // Init I/O pin
+  //digitalWrite ( RF_PIN, LOW ) ;
   system_update_cpu_freq ( 80 ) ;                    // Set to 80/160 MHz
   SPIFFS.begin() ;                                   // Enable file system
   SPIFFS.info ( fs_info ) ;                          // Load info
