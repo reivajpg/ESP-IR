@@ -6,10 +6,11 @@ SoftwareSerial mySerial(8, 9); // RX, TX
 
 IRsend irsend;
 
-unsigned long ezAdjust = 0x20DFDF20; 
-unsigned long inStart = 0x20DFFF00;
-//unsigned long powerOnly = 0x20DFC837;
-//unsigned long inStop = 0x20DFC837;
+unsigned long ezAdjust = 0x20DFDF20;  //0x20DFDF20="Warning: instart"
+unsigned long inStart = 0x20DFFF00;   //0x20DFFF00="Warning: Easy adjust"
+//unsigned long powerOnly = 0x20DFC837; //0x20DF7F80="Warning: Poweronly"
+//unsigned long inStop = 0x20DF5FA0;  //0x20DF5FA0="Warning: instop"
+//unsigned long resetF = 0x20DF3FC0;  //0x20DF3FC0="Warning: Reset to factory"
 // https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/lg/42H3000.lircd.conf
 unsigned long key0 = 0x20DF08F7;
 unsigned long key1 = 0x20DF8877;

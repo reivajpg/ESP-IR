@@ -4,7 +4,7 @@
 #include <IRsend.h>
 
 
-const uint16_t kIrLed = 15;  //15 (D8)// ESP8266 GPIO pin to use. Recommended: 4 (D2).
+const uint16_t kIrLed = 13;  //13 (D7)//15 (D8)// ESP8266 GPIO pin to use. Recommended: 4 (D2).
 IRsend irsend(kIrLed);      // Set the GPIO to be used to sending the message.
 
 //0x20DFDF20 - "IN-START" preselected below
@@ -19,6 +19,7 @@ void setup() {
 
 void loop() {
  Serial.println("IN-START");
+ Serial.println("PIN 0 4 1 3"); 
  for (int i = 0; i < 4; i++){
  irsend.sendNEC(0x20DFDF20, 32); //"IN-START" 2018-2020 models
  delay(5000);} //Command repeats every 5 seconds on first run untill arduino power disconnect

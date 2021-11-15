@@ -110,6 +110,12 @@ void setup() {
 void loop() {
   // Check if an IR message has been received.
   if (irrecv.decode(&results)) {  // We have captured something.
+
+
+serialPrintUint64(results.value, HEX);
+    Serial.println("");
+
+    
     // The capture has stopped at this point.
     decode_type_t protocol = results.decode_type;
     uint16_t size = results.bits;

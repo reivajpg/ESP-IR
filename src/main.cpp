@@ -45,7 +45,8 @@ extern "C"
 // Version number
 #define VERSION "20-jul-2017"
 // Output pins
-#define IR_PIN 15 //4
+#define IR_PIN 13
+ //4
 //#define RF_PIN 0
 
 //******************************************************************************************
