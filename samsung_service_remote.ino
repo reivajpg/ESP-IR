@@ -24,10 +24,10 @@
 #define BT8 12 //Exit
 #define BT9 A0 //Power
 
-/////////////////INIZIALIZZA ISTANZE LIBRERIE///////////////////
+/////////////////INICIALIZA LIBRERIA///////////////////
 
-IRsend irsend;              //Inizializza libreria infrarossi trasmittente (pin trasmittente di default collegato al pin digitale PWM D3
-IRrecv irrecv(LEDRCV);      //Inizializza libreria infrarossi ricevente
+IRsend irsend;              //Inicializa libreria ir trasm (pin trasmittente di default collegato al pin digitale PWM D3
+IRrecv irrecv(LEDRCV);      //Inicializa libreria ir recept
 decode_results results;
 
 //////////////////////SETUP/////////////////////////
